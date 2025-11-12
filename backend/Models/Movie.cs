@@ -19,5 +19,8 @@ namespace backend.Models
         public int CategoryId { get; set; }
 
         public Category Category { get; set; }
+    public ICollection<MovieUser> WatchedByUsers { get; set; }
+    // Navigation property for many-to-many relationship with MovieUser via Favorites
+    public ICollection<Favorites> Favorites { get; set; }
     }
 }

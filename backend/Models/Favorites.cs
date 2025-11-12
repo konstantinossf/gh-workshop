@@ -13,14 +13,15 @@ namespace backend.Models
         [StringLength(100)]
         public string Name { get; set; }
 
-        // Navigation property for many-to-many relationship with Movie
-        public List<Movie> Movies { get; set; } = new List<Movie>();
+        // Navigation property for many-to-one relationship with MovieUser
+        [Required]
+        public int MovieUserId { get; set; }
+        public MovieUser MovieUser { get; set; }
 
-        // Navigation property for owner (single MovieUser)
-    [Required]
-    [ForeignKey("Owner")]
-    public int MovieUserId { get; set; }
-    public MovieUser Owner { get; set; }
+        // Navigation property for many-to-one relationship with Movie
+        [Required]
+        public int MovieId { get; set; }
+        public Movie Movie { get; set; }
     }
 // Checklist (x for done, - for not done):
 // - [x] Create class structure

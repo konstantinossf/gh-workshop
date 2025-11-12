@@ -16,8 +16,9 @@ namespace backend.Models
         [EmailAddress]
         public string Email { get; set; }
 
-        // Navigation property for many-to-many relationship with Movie
-        public List<Movie> Movies { get; set; } = new List<Movie>();
+    // Navigation property for many-to-many relationship with Movie via Favorites
+    public ICollection<Favorites> Favorites { get; set; }
+    public ICollection<Movie> FavoriteMovies { get; set; }
     }
 }
 // Checklist (x for done, - for not done):

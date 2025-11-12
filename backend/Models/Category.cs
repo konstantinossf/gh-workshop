@@ -12,6 +12,7 @@ namespace backend.Models
         [MaxLength(50)]
         public string Name { get; set; }
 
-        public ICollection<Movie> Movies { get; set; }
+    [System.Text.Json.Serialization.JsonIgnore]
+    public ICollection<Movie> Movies { get; set; }
     }
 }
