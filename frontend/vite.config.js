@@ -15,4 +15,16 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
+  server: {
+  proxy: {
+    '/movies': {
+      target: 'http://localhost:5065',
+      changeOrigin: true,
+    },
+    '/seed': {
+      target: 'http://localhost:5065',
+      changeOrigin: true,
+    },
+  },
+}
 })

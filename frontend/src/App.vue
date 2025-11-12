@@ -1,11 +1,17 @@
-<script setup></script>
+
+<script setup>
+import MovieList from './components/MovieList.vue'
+import SeedMovies from './components/SeedMovies.vue'
+</script>
 
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <div class="min-h-screen bg-gray-100 flex flex-col items-center justify-center">
+    <div class="max-w-2xl w-full space-y-8">
+      <SeedMovies />
+      <MovieList />
+    </div>
+  </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+</style>
