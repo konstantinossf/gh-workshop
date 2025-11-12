@@ -1,6 +1,10 @@
 @backend_HostAddress = http://localhost:5065
 
-GET {{backend_HostAddress}}/weatherforecast/
-Accept: application/json
-
 ###
+
+### Seed database
+POST {{backend_HostAddress}}/seed
+Content-Type: application/json
+
+### Get all movies with categories
+GET {{backend_HostAddress}}/movies
